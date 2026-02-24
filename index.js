@@ -40,12 +40,13 @@ function checkGuess() {
 
   if (guess === targetNumber) {
     numberOfGuessesMessage.style.display = '';
-    numberOfGuessesMessage.innerHTML = `You made ${attempts} ${attempts === 1 ? 'guess' : 'guesses'}`;
+    numberOfGuessesMessage.innerHTML = `You guessed ${guess}. You got it in ${attempts} ${attempts === 1 ? 'guess' : 'guesses'}!`;
 
     correctMessage.style.display = '';
 
     submitButton.disabled = true;
     guessInput.disabled = true;
+    resetButton.style.display = '';
   } else {
     if (guess < targetNumber) {
       tooLowMessage.style.display = '';
